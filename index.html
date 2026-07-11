@@ -268,6 +268,32 @@
   footer strong{color:#fff;display:block;margin-bottom:6px;}
   footer a{color:var(--gold);}
 
+  /* RESORT CARDS */
+  .resort-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:36px;}
+  .resort-card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease, box-shadow .2s ease;}
+  .resort-card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(26,43,76,.1);}
+  .resort-card .rc-thumb{height:180px;background-size:cover;background-position:center;position:relative;}
+  .resort-card .rc-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.2));}
+  .rc-thumb.rt-seminyak{background-image:url('images/resort_seminyak.jpg');}
+  .rc-thumb.rt-legian{background-image:url('images/resort_legian.jpg');}
+  .rc-thumb.rt-samui{background-image:url('images/resort_samui.jpg');}
+  .rc-thumb.rt-khaolak{background-image:url('images/resort_khaolak.jpg');}
+  .resort-card .rc-header{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:22px 20px 18px;position:relative;overflow:hidden;}
+  .resort-card .rc-header::after{content:"";position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(201,162,75,.15);}
+  .resort-card .rc-header .rc-country{font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:6px;}
+  .resort-card .rc-header h3{font-size:15px;font-weight:700;line-height:1.4;position:relative;z-index:1;}
+  .resort-card .rc-header .rc-tag{display:inline-block;margin-top:10px;font-size:11px;color:#d3dbeb;font-style:italic;position:relative;z-index:1;}
+  .resort-card .rc-body{padding:20px;flex:1;display:flex;flex-direction:column;}
+  .resort-card .rc-cond{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+  .resort-card .rc-cond span{font-size:11.5px;font-weight:600;padding:5px 12px;border-radius:50px;background:rgba(201,162,75,.12);color:var(--gold-dark);border:1px solid rgba(201,162,75,.3);}
+  .resort-card .rc-rooms{list-style:none;font-size:13.5px;margin-bottom:0;}
+  .resort-card .rc-rooms li{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px dashed var(--line);}
+  .resort-card .rc-rooms li:last-child{border-bottom:none;}
+  .resort-card .rc-rooms li .rtype{color:var(--muted);font-size:13px;}
+  .resort-card .rc-rooms li .rprice{color:var(--navy);font-weight:700;font-size:15px;}
+  .resort-card .rc-rooms li .rprice small{font-size:11px;color:var(--muted);font-weight:400;margin-left:2px;}
+  .resort-card .rc-note{margin-top:14px;padding:12px 14px;background:#f6f3ec;border-radius:10px;font-size:12px;color:var(--muted);line-height:1.6;}
+
   /* FLOAT KAKAO */
   .float-kakao{
     position:fixed;right:18px;bottom:18px;
@@ -314,7 +340,7 @@
 <section class="hero">
   <span class="eyebrow">Employee Exclusive Offer</span>
   <h1>임직원 특별 제안</h1>
-  <h2>아난타라 베케이션 클럽<br>푸켓 · 방콕<br>3박 4일 체험 패키지</h2>
+  <h2>아난타라 베케이션 클럽<br>푸켓 · 방콕 · 발리 · 사무이 · 카오락</h2>
 
   <div class="hero-ctas">
     <a href="https://forms.gle/coJ2mpGZPRxHMdzS9" target="_blank" rel="noopener" class="btn btn-primary">지금 예약하기</a>
@@ -326,8 +352,52 @@
 <!-- BODY -->
 <div class="wrap">
 
+  <!-- OFFER 1-2 GROUP HEADER -->
+  <div style="padding-bottom:48px; border-bottom:2px solid var(--gold,#c9a84c); margin-bottom:64px;">
+    <div class="section-title">Exclusive Offer 1 – 2.</div>
+    <h2 class="section-heading">푸켓 &amp; 방콕 3박 4일 체험 패키지</h2>
+    <p class="section-sub">임직원 전용 3박 4일 패키지로, 프라이빗 풀빌라부터 리버뷰 스위트까지 — 아래 두 리조트 중 원하는 곳을 선택하세요.</p>
+
+    <p style="text-align:center;font-size:12.5px;color:var(--muted);background:#f6f3ec;border:1px solid var(--line);border-radius:10px;padding:12px 18px;max-width:640px;margin:0 auto 24px;line-height:1.7;">
+      📌 <strong style="color:var(--ink);">특별 체험 패키지 구매조건:</strong> 가구 연 소득 1억 이상, 투숙기간 내 멤버십 프로그램 설명 세션 참석 필요 (약 90분 소요)
+    </p>
+
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:0;margin-bottom:32px;">
+      <span style="background:var(--navy);color:#fff;font-size:13px;font-weight:600;padding:10px 20px;border-radius:50px;">🍳 매일 조식 포함 (객실 정원 기준)</span>
+      <span style="background:var(--gold);color:#1A1A1A;font-size:13px;font-weight:600;padding:10px 20px;border-radius:50px;">🚙 공항 픽업 &amp; 드롭오프 제공</span>
+      <span style="background:var(--card);border:1px solid var(--line);color:var(--gold-dark);font-size:13px;font-weight:600;padding:10px 20px;border-radius:50px;">🎁 리조트 크레딧 3,000 THB</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;">
+      <div style="background:linear-gradient(135deg,var(--navy),var(--navy-2));border-radius:16px;padding:24px 22px;color:#fff;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-30px;right:-30px;width:110px;height:110px;border-radius:50%;background:rgba(201,162,75,.15);"></div>
+        <div style="font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">🇹🇭 Phuket, Thailand</div>
+        <div style="font-weight:700;font-size:16px;line-height:1.45;margin-bottom:6px;position:relative;z-index:1;">아난타라 베케이션 클럽<br>마이카오 푸켓</div>
+        <div style="font-size:12px;color:#d3dbeb;margin-bottom:16px;font-style:italic;">열대 정원 속 프라이빗 리조트</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.75);line-height:1.8;">
+          원베드룸 스위트 <strong style="color:#fff;float:right;">USD 349</strong><br>
+          투베드룸 스위트 <strong style="color:#fff;float:right;">USD 449</strong><br>
+          원베드룸 풀빌라 <strong style="color:#fff;float:right;">USD 549</strong><br>
+          투베드룸 풀빌라 <strong style="color:var(--gold);float:right;">USD 649</strong>
+        </div>
+        <div style="margin-top:14px;font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;">/ 3박 4일 기준 · Offer 1 ↓</div>
+      </div>
+      <div style="background:linear-gradient(135deg,var(--navy),var(--navy-2));border-radius:16px;padding:24px 22px;color:#fff;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-30px;right:-30px;width:110px;height:110px;border-radius:50%;background:rgba(201,162,75,.15);"></div>
+        <div style="font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:8px;">🇹🇭 Bangkok, Thailand</div>
+        <div style="font-weight:700;font-size:16px;line-height:1.45;margin-bottom:6px;position:relative;z-index:1;">아난타라 리버사이드<br>방콕</div>
+        <div style="font-size:12px;color:#d3dbeb;margin-bottom:16px;font-style:italic;">차오프라야 강변의 여유로운 리조트</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.75);line-height:1.8;">
+          디럭스룸 <strong style="color:#fff;float:right;">USD 399</strong><br>
+          디럭스 리버뷰 <strong style="color:var(--gold);float:right;">USD 459</strong>
+        </div>
+        <div style="margin-top:36px;font-size:11px;color:var(--gold);font-weight:700;letter-spacing:1px;">/ 3박 4일 기준 · Offer 2 ↓</div>
+      </div>
+    </div>
+  </div>
+
   <!-- INTRO -->
-  <div class="section-title">Exclusive Offer 1.</div>
+  <div class="section-title">Offer 1.</div>
   <h2 class="section-heading">아난타라 베케이션 클럽 푸켓 마이카오</h2>
   <p class="section-sub">아난타라 베케이션 클럽 푸켓 마이카오는 열대 정원 사이에 자리한 스위트와 풀빌라로 가족·친구와 함께하는 프라이빗 휴식을 선사합니다.</p>
 
@@ -549,7 +619,7 @@
 
   <!-- BANGKOK DIVIDER -->
   <div style="margin-top:96px; padding-top:64px; border-top:2px solid var(--gold,#c9a84c);">
-    <div class="section-title">Exclusive Offer 2.</div>
+    <div class="section-title">Offer 2.</div>
     <h2 class="section-heading">아난타라 리버사이드 방콕 체험 패키지</h2>
     <p class="section-sub">차오프라야 강변에 자리한 리조트형 호텔에서 도심의 편의성과 자연의 고요함을 함께 누려보세요.</p>
   </div>
@@ -726,6 +796,104 @@
     </div>
   </div>
 
+  <!-- NEW RESORTS DIVIDER -->
+  <div style="margin-top:96px; padding-top:64px; border-top:2px solid var(--gold,#c9a84c);">
+    <div class="section-title">Exclusive Offer 3 – 6.</div>
+    <h2 class="section-heading">발리 · 사무이 · 카오락 특가</h2>
+    <p class="section-sub">최소 2박부터 예약 가능한 특가입니다. (구매조건 없음) 조식이 포함되며, 여행 일정에 맞춰 자유롭게 선택하세요.</p>
+  </div>
+
+  <p style="text-align:center;font-size:12.5px;color:var(--muted);background:#f6f3ec;border:1px solid var(--line);border-radius:10px;padding:12px 18px;max-width:640px;margin:24px auto 8px;line-height:1.7;">
+    📌 <strong style="color:var(--ink);">구매조건 :</strong> 2박 이상 예약 필요
+  </p>
+
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:20px;margin-bottom:8px;">
+    <span style="background:var(--navy);color:#fff;font-size:13px;font-weight:600;padding:10px 20px;border-radius:50px;">🍳 매일 조식 포함 (객실 정원 기준)</span>
+    <span style="background:var(--gold);color:#1A1A1A;font-size:13px;font-weight:600;padding:10px 20px;border-radius:50px;">📅 최소 2박 예약 조건</span>
+    <span style="background:var(--card);border:1px solid var(--line);color:var(--muted);font-size:13px;font-weight:600;padding:10px 20px;border-radius:50px;">💳 1박 요금 기준 표기</span>
+  </div>
+
+  <div class="resort-grid">
+
+    <div class="resort-card">
+      <div class="rc-thumb rt-seminyak"></div>
+      <div class="rc-header">
+        <div class="rc-country">🇮🇩 Bali, Indonesia</div>
+        <h3>아난타라 베케이션 클럽<br>아바니 스미냑 발리</h3>
+        <div class="rc-tag">Anantara Vacation Club at Avani Seminyak Bali<br>스미냑 트렌디한 감성의 발리 도심 휴양지</div>
+      </div>
+      <div class="rc-body">
+        <div class="rc-cond"><span>최소 2박</span><span>조식 포함</span></div>
+        <ul class="rc-rooms">
+          <li><span class="rtype">원베드룸 아파트먼트 스위트</span><span class="rprice">USD 150 <small>/박</small></span></li>
+          <li><span class="rtype">투베드룸 아파트먼트 스위트</span><span class="rprice">USD 200 <small>/박</small></span></li>
+        </ul>
+        <div class="rc-note">📌 구매기간 26.07.01–08.31 · 사용기간 26.09.01–27.09.30</div>
+      </div>
+    </div>
+
+    <div class="resort-card">
+      <div class="rc-thumb rt-legian"></div>
+      <div class="rc-header">
+        <div class="rc-country">🇮🇩 Bali, Indonesia</div>
+        <h3>아난타라 베케이션 클럽<br>레기안 발리</h3>
+        <div class="rc-tag">Anantara Vacation Club Legian Bali<br>레기안 해변과 맞닿은 발리의 클래식 리조트</div>
+      </div>
+      <div class="rc-body">
+        <div class="rc-cond"><span>최소 2박</span><span>조식 포함</span></div>
+        <ul class="rc-rooms">
+          <li><span class="rtype">원베드룸 아파트먼트 스위트</span><span class="rprice">USD 170 <small>/박</small></span></li>
+          <li><span class="rtype">투베드룸 아파트먼트 스위트</span><span class="rprice">USD 220 <small>/박</small></span></li>
+        </ul>
+        <div class="rc-note">📌 구매기간 26.07.01–08.31 · 사용기간 26.09.01–27.09.30</div>
+      </div>
+    </div>
+
+    <div class="resort-card">
+      <div class="rc-thumb rt-samui"></div>
+      <div class="rc-header">
+        <div class="rc-country">🇹🇭 Koh Samui, Thailand</div>
+        <h3>아난타라 베케이션 클럽<br>아바니+ 사무이</h3>
+        <div class="rc-tag">Anantara Vacation Club at Avani+ Samui<br>코사무이 에메랄드 바다 앞 프리미엄 리조트</div>
+      </div>
+      <div class="rc-body">
+        <div class="rc-cond"><span>최소 2박</span><span>조식 포함</span></div>
+        <ul class="rc-rooms">
+          <li><span class="rtype">디럭스</span><span class="rprice">USD 130 <small>/박</small></span></li>
+          <li><span class="rtype">풀빌라</span><span class="rprice">USD 170 <small>/박</small></span></li>
+        </ul>
+        <div class="rc-note">📌 구매기간 26.07.01–08.31 · 사용기간 26.09.01–27.09.30</div>
+      </div>
+    </div>
+
+    <div class="resort-card">
+      <div class="rc-thumb rt-khaolak"></div>
+      <div class="rc-header">
+        <div class="rc-country">🇹🇭 Khao Lak, Thailand</div>
+        <h3>아난타라 베케이션 클럽<br>아바니+ 카오락</h3>
+        <div class="rc-tag">Anantara Vacation Club at Avani+ Khao Lak<br>자연 속 고요함이 흐르는 카오락의 힐링 베이스캠프</div>
+      </div>
+      <div class="rc-body">
+        <div class="rc-cond"><span>최소 2박</span><span>조식 포함</span></div>
+        <ul class="rc-rooms">
+          <li><span class="rtype">프리미어</span><span class="rprice">USD 120 <small>/박</small></span></li>
+        </ul>
+        <div class="rc-note">📌 구매기간 26.07.01–08.31 · 사용기간 26.09.01–27.09.30</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;margin-top:28px;">
+    <a href="https://forms.gle/wp8rUnnW4aJEp56n7" target="_blank" rel="noopener"
+       style="display:inline-block;padding:10px 28px;background:var(--navy);color:#fff;
+              font-size:13px;font-weight:600;border-radius:50px;text-decoration:none;
+              letter-spacing:.4px;opacity:.85;transition:opacity .2s;"
+       onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='.85'">
+      📝 발리 · 사무이 · 카오락 예약 신청
+    </a>
+  </div>
+
   <!-- CTA -->
   <div id="cta" class="cta-block">
     <h3>지금 예약하고 임직원 특별가를 경험하세요</h3>
@@ -741,7 +909,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <strong>아난타라 베케이션 클럽 푸켓 마이카오 · 아난타라 리버사이드 방콕 · 임직원 특별 제안</strong>
+  <strong>아난타라 베케이션 클럽 푸켓 마이카오 · 아난타라 리버사이드 방콕 · 아바니 스미냑 발리 · 레기안 발리 · 아바니+ 사무이 · 아바니+ 카오락 · 임직원 특별 제안</strong>
   본 페이지는 임직원 대상 안내용으로, 가격 및 제공 내용은 시즌 및 예약 시점에 따라 변동될 수 있습니다.<br>
   <a href="https://www.anantaravacationclubkorea.com/" target="_blank" rel="noopener">www.anantaravacationclubkorea.com</a>
   · 카카오 채널 <a href="https://pf.kakao.com/_pxbLBn" target="_blank" rel="noopener">카카오톡으로 문의하기</a>
